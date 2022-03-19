@@ -2,10 +2,15 @@
   "name": "notes-app",
   "version": "1.0.0",
   "description": "create and track notes",
-  "main": "index.js",
+  "main": "client/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Carlos Lerma",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "express": "^4.17.3",
+    "morgan": "^1.10.0"
+  }
 }
