@@ -1,21 +1,22 @@
+const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const app = express();
 module.exports = app;
 
-app.use(morgan(dev));
+app.use(morgan('dev'));
 
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('*', function (req, res) {
+app.get('*', function (req, res, next) {
   res.sendFile(path.join(__dirname, '..', 'client', 'index.html'));
 });
 
-app.use('/api', require('/api'));
+app.use('/api', require('./api'));
 
 app.use((err, req, res, next) => {
   console.error(err.stack);

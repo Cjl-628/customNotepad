@@ -1,8 +1,9 @@
-const router = require('express').Router;
+const router = require('express').Router();
 
 //GET /api/notes
 router.get('/', (req, res, next) => {
   //get request, list notes in descending order
+  console.log('working');
 });
 
 //POST /api/notes
