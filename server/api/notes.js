@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const { Note } = require('../db/Note');
+const Note = require('../db/Note');
 
 //GET /api/notes
 router.get('/', async (req, res, next) => {
   try {
-    const notesList = await Note.findAll({ sort: [updatedAt, descending] });
+    const notesList = await Note.findAll();
     res.send(notesList);
   } catch (error) {
     next(error);
